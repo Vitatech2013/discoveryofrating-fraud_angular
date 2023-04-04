@@ -34,7 +34,6 @@ constructor(private fb:FormBuilder,private service:UserApiService,private router
   Register(){
     if(this.userregisterform.valid){
       this.service.PostUserRegister(this.userregisterform.value).subscribe((res)=>{
-        console.log(res);
         alert("Register Success");
       });
       this.router.navigate(['/user-login'])

@@ -22,11 +22,10 @@ userlogin(){
   let password = this.userloginform.get('Password')?.value;
 
   this.service.GetUser(name,password).subscribe((res)=>{
-    console.log(res);
     if (res) {
       localStorage.setItem('token',JSON.stringify(res))
       alert("Login Success")
-      this.router.navigate(['/user-navbar']);
+      this.router.navigate(['/user-navbar/user-profile']);
     } else {
       alert('Inavalid Credentials');
     }

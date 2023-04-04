@@ -1,5 +1,5 @@
 <div class="form">
-    <mat-toolbar color="primary">User-Register</mat-toolbar>
+    <mat-toolbar style="background-color: rgb(132, 79, 168);">User-Register</mat-toolbar>
     <form [formGroup]="userregisterform" (ngSubmit)="Register()">
         <mat-card>
             <div class="row">
@@ -55,6 +55,10 @@
                 <button mat-raised-button type="button" color="warn" class="mb-3 mt-3">Cancel</button>
                 <button mat-raised-button type="submit" color="primary" class="ms-2 me-5 mb-3 mt-3">Register</button>
             </div>
+            <div class="text-center mb-3 mt-2">
+                <a class="text-danger"routerLink="/user-login">Already Registered..! Go To Login Page</a>
+    
+              </div>
             <div class="  text-center" >
                 <a routerLink="/welcome" class="forget-link text-primary"><h2 >Go To Home-Page</h2></a>
             </div>

@@ -1,11 +1,11 @@
 <div class="form">
     <form [formGroup]="feedbackform" (ngSubmit)="addfeedback()">
-        <mat-toolbar color="primary">Add Feedback</mat-toolbar>
+        <mat-toolbar style="background: rgb(82, 156, 91);">Add Feedback</mat-toolbar>
         <mat-card>
           
               <mat-form-field appearance="fill" >
                 <mat-label>UserName</mat-label>
-                <input matInput  value="{{user.name}}" formControlName="username">
+                <input matInput  value="{{user.name}}" formControlName="username" readonly>
               </mat-form-field>
               <mat-form-field appearance="fill">
                 <mat-label>AppName</mat-label>

@@ -27,7 +27,6 @@ user:any;
 
 getapps(){
   this.service.getApps().subscribe((res)=>{
-    console.log(res);
     this.apps = res
   })
 }

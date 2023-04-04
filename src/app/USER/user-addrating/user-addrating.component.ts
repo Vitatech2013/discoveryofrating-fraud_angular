@@ -44,14 +44,12 @@ constructor(private userservice:UserApiService, private service:ApiService , pri
 
   getapps(){
     this.service.getApps().subscribe((res)=>{
-      console.log(res);
       this.apps = res
     })
   }
 addrating(){
   if(this.ratingform.valid){
     this.userservice.PostRating(this.ratingform.value).subscribe((res)=>{
-      console.log(res);
       alert("Ratting added successfully");
       window.location.reload();
     });

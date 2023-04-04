@@ -15,9 +15,10 @@ export class UserPostedappComponent implements OnInit{
   }
   GetApp(){
     this.service.getApps().subscribe((res)=>{
-      console.log(res);
       this.aapp = res
     })
   }
-
+  download(){
+    alert("File Downloaded")
+  }
 }

@@ -18,7 +18,6 @@ constructor(public service:ApiService , private dialog:MatDialog){}
   }
   GetApp(){
     this.service.getApps().subscribe((res)=>{
-      console.log(res);
       this.app = res
     })
   }

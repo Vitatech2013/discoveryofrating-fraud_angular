@@ -17,7 +17,6 @@ constructor(private service:ApiService){}
   }
 viewUsers(){
   this.service.getUser().subscribe((res)=>{
-    console.log(res);
     this.user = res;
   })
 }

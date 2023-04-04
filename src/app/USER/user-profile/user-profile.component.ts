@@ -18,7 +18,6 @@ user:any;
 getprofile(){
   let name=JSON.parse(localStorage.getItem('token')!).name;
   this.service.GetuserProfile(name).subscribe((res:any)=>{
-    console.log(res);
     res.filter((x:any)=>{
       this.user = x
       console.log(this.user);

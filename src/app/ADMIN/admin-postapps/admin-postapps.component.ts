@@ -10,11 +10,11 @@ import { Router } from '@angular/router';
 })
 export class AdminPostappsComponent implements OnInit{
   foods = [
-    {value: 'Education-0', viewValue: 'Education'},
-    {value: 'Games-1', viewValue: 'Games'},
-    {value: 'Entertainement-2', viewValue: 'Entertainement'},
-    {value: 'Systemapps-2', viewValue: 'Systemapps'},
-    {value: 'Shoppingapps-2', viewValue: 'Shoppingapps'},
+    {value: 'Education', viewValue: 'Education'},
+    {value: 'Games', viewValue: 'Games'},
+    {value: 'Entertainement', viewValue: 'Entertainement'},
+    {value: 'Systemapps', viewValue: 'Systemapps'},
+    {value: 'Shoppingapps', viewValue: 'Shoppingapps'},
   ];
   postappform!:FormGroup;
   constructor(private fb:FormBuilder , private service:ApiService , private router:Router){}
