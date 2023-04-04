@@ -1,0 +1,40 @@
+<div class="form">
+    <form [formGroup]="ratingform" (ngSubmit)="addrating()">
+        <mat-toolbar color="primary">Add Rating</mat-toolbar>
+        <mat-card>
+            <mat-form-field appearance="fill" >
+                <mat-label>UserName</mat-label>
+                <input matInput readonly  formControlName="username">
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>AppName</mat-label>
+                <mat-select placeholder="Select app" formControlName="appname">
+                    <mat-option *ngFor="let app of apps" value="{{app.appname}}" >
+                        {{app.appname}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Rating</mat-label>
+                <mat-select formControlName="rating">
+                    <mat-option *ngFor="let rating of ratings" [value]="rating.value">
+                        {{rating.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Status</mat-label>
+                <mat-select formControlName="status">
+                    <mat-option *ngFor="let sta of status" [value]="sta.value">
+                        {{sta.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+              <div class="text-center mb-2">
+                <button mat-raised-button type="button" color="warn">Cancel</button>
+                <button mat-raised-button type="submit" color="accent" class="ms-3">Submit</button>
+              </div>
+        </mat-card>
+    </form>
+</div>
+<br>

@@ -1,0 +1,36 @@
+<div class="form">
+    <form [formGroup]="feedbackform" (ngSubmit)="addfeedback()">
+        <mat-toolbar color="primary">Add Feedback</mat-toolbar>
+        <mat-card>
+          
+              <mat-form-field appearance="fill" >
+                <mat-label>UserName</mat-label>
+                <input matInput  value="{{user.name}}" formControlName="username">
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>AppName</mat-label>
+                <mat-select formControlName="appname" placeholder="Select app">
+                    <mat-option *ngFor="let app of apps" value="{{app.appname}}" >
+                        {{app.appname}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Feedback</mat-label>
+                <input matInput formControlName="feedback" placeholder="Please add your feedback">
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="date" placeholder="choose date" >
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+              <div class="text-center mb-2">
+                <button mat-raised-button type="button" color="warn">Cancel</button>
+                <button mat-raised-button type="submit" color="accent" class="ms-3">Submit</button>
+              </div>
+        </mat-card>
+    </form>
+</div>
+<br>

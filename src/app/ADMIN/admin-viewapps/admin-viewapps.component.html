@@ -1,0 +1,48 @@
+
+<mat-card>
+  <mat-toolbar color="accent">View Posted App's</mat-toolbar>
+  <div class=" table-responsive">
+<table class="table table-striped ">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">AppName</th>
+        <th scope="col">Description</th>
+        <th scope="col">category</th>
+        <th scope="col">Updated Version</th>
+        <th scope="col">Updation Date</th>
+        <th scope="col">Memory Size</th>
+        <th scope="col">Language</th>
+        <th scope="col">Seller</th>
+        <th scope="col">App price</th>
+        <th scope="col">App Image</th>
+        <th scope="col">Action</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of app index as i">
+        <th>{{i+1}}</th>
+        <td >{{data.appname}}</td>
+        <td>{{data.description}}</td>
+        <td>{{data.category}}</td>
+        <td>{{data.updatedversion}}</td>
+        <td>{{data.updationdate | date:'dd-MM-yyyy'}}</td>
+        <td>{{data.memorysize}}</td>
+        <td>{{data.language}}</td>
+        <td>{{data.seller}}</td>
+        <td>{{data.appsprice | currency:'INR'}}</td>
+        <td>
+          <img src ="{{data.appsimage}}" width="80px" height="50px">
+        </td>
+        <td>
+            <button class="btn btn-danger me-2" (click)="editapp(data)">edit</button>
+            <button class="btn btn-primary me-2" (click)="deleteapp(data._id)">Delete</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+</mat-card>

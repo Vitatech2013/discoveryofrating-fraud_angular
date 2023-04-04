@@ -1,0 +1,46 @@
+<mat-card>
+  <mat-toolbar style="background-color: rgb(69, 204, 186);">View Admin Posted-apps</mat-toolbar>
+  <div class="table-responsive">
+    
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">AppName</th>
+        <th scope="col">AppName</th>
+        <th scope="col">Description</th>
+        <th scope="col">category</th>
+        <th scope="col">Updated Version</th>
+        <th scope="col">Updation Date</th>
+        <th scope="col">Memory Size</th>
+        <th scope="col">Language</th>
+        <th scope="col">Seller</th>
+        <th scope="col">App price</th>
+        <th scope="col">App Image</th>
+        <th scope="col">Action</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let adata of aapp index as i">
+        <td >{{i + 1}}</td>
+        <td >{{adata.appname}}</td>
+        <td>{{adata.description}}</td>
+        <td>{{adata.category}}</td>
+        <td>{{adata.updatedversion}}</td>
+        <td>{{adata.updationdate | date:'dd/MM/yyyy'}}</td>
+        <td>{{adata.memorysize}}</td>
+        <td>{{adata.language}}</td>
+        <td>{{adata.seller}}</td>
+        <td>{{adata.appsprice}}</td>
+        <td><img src="{{adata.appsimage}}" width="50%" height="50%"></td>
+       <td>
+        <button class="btn btn-primary me-1">Download</button>
+       </td>
+      </tr>
+
+    </tbody>
+  </table>
+  
+</div>
+</mat-card>

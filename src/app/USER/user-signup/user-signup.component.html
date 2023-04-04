@@ -1,0 +1,63 @@
+<div class="form">
+    <mat-toolbar color="primary">User-Register</mat-toolbar>
+    <form [formGroup]="userregisterform" (ngSubmit)="Register()">
+        <mat-card>
+            <div class="row">
+                <div class="col-sm-6">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Name</mat-label>
+                        <input matInput formControlName="name">
+                      </mat-form-field>
+                </div>
+                <div class="col-sm-6">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input matInput formControlName="password">
+                      </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Mobile no</mat-label>
+                        <input matInput formControlName="mobileno">
+                      </mat-form-field>
+                </div>
+                <div class="col-sm-6">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Email Id</mat-label>
+                        <input matInput formControlName="emailid">
+                      </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Qualification</mat-label>
+                        <mat-select formControlName="qualification">
+                            <mat-option *ngFor="let qua of qualification" [value]="qua.value">
+                                {{qua.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Choose  DOB</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="dob">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="text-end">
+                <button mat-raised-button type="button" color="warn" class="mb-3 mt-3">Cancel</button>
+                <button mat-raised-button type="submit" color="primary" class="ms-2 me-5 mb-3 mt-3">Register</button>
+            </div>
+            <div class="  text-center" >
+                <a routerLink="/welcome" class="forget-link text-primary"><h2 >Go To Home-Page</h2></a>
+            </div>
+        </mat-card>
+    </form>
+</div>

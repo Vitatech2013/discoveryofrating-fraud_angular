@@ -1,0 +1,22 @@
+<div class="form">
+    <mat-toolbar color="primary">User-Login</mat-toolbar>
+    <form [formGroup]="userloginform" (ngSubmit)="userlogin()">
+        <mat-card>
+        <mat-form-field appearance="fill">
+            <mat-label>UserName</mat-label>
+            <input matInput placeholder="Enter Valid Name" formControlName="Username">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label >
+            <input matInput placeholder="Enter Valid Password" formControlName="Password">
+          </mat-form-field>
+          <div class="text-center ms-2 me-2 mb-2 ">
+            <button type="button" class="btn btn-danger ">cancel</button>
+            <button type="submit" class="btn btn-success ms-3">Login</button>
+          </div>
+          <div class="text-center mb-3 mt-2">
+            <a class="text-danger" href="">Register...? New User</a>
+          </div>
+        </mat-card>
+    </form>
+</div>

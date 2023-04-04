@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-toolbar color="warn">Users-List</mat-toolbar>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Password</th>
+        <th scope="col">Mobile No</th>
+        <th scope="col">Email Id</th>
+        <th scope="col">Qualification</th>
+        <th scope="col">DOB</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let users of user">
+        <th scope="row" >{{users._id}}</th>
+        <td >{{users.name}}</td>
+        <td>{{users.password}}</td>
+        <td>{{users.mobileno}}</td>
+        <td>{{users.emailid}}</td>
+        <td>{{users.qualification}}</td>
+        <td>{{users.dob | date:'dd/MM/yyyy'}}</td>
+        
+      </tr>
+
+    </tbody>
+  </table>
+</mat-card>
