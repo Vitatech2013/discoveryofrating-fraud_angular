@@ -18,7 +18,7 @@ export class AdminPostappsComponent implements OnInit{
   ];
   postappform!:FormGroup;
   constructor(private fb:FormBuilder , private service:ApiService , private router:Router){}
-url:any;
+  url:any;
   ngOnInit(): void {
 
    this.postappform = this.fb.group({
@@ -53,7 +53,7 @@ apppost(){
     appsimage:this.url
   }
  if(this.postappform.valid){
-  this.service.PostApps(this.postappform.value).subscribe((res)=>{
+  this.service.PostApps(data).subscribe((res)=>{
     console.log(res);
     alert("Success");
     this.router.navigate(['/admin-navbar/admin-viewpostapp']);
